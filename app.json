@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/map/map",
+    "pages/posts/post",
     "pages/form/form",
     "pages/welcome/welcome",
-    "pages/posts/post",
     "pages/posts/post-detail/post-detail",
     "pages/index/index",
     "pages/logs/logs"
