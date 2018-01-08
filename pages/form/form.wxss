@@ -1,0 +1,41 @@
+.section{ margin-bottom: 40px;}
+.btn_swh switch{
+  margin-top: 20px;
+  width: 100%;
+  margin-bottom: 40rpx;
+  font-size: 24rpx;
+}
+.radio{ 
+  display: block;
+  margin-bottom: 5px;
+}
+.check_group checkbox{
+  display: block;
+}
+
+
+
+
+.section_input{
+   height: 80rpx;
+  width: 100%;
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+}
+.search-img{
+  margin: auto 0 auto 20rpx;
+}
+.section_input input{
+   height: 100%;
+   width: 600rpx;
+   margin-left: 20rpx;
+   font-size: 28rpx;
+}
+.placeholder{
+  font-size: 14px;
+   color: #d1d1d1; 
+  margin-left: 20rpx;
+}
+
+

@@ -1,0 +1,52 @@
+<view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='section btn_swh'>
+      <switch checked='{{false}}' bindchange='sw_chage'>按钮开关</switch>
+      <switch name="switch" type='checkbox' color='red' bindchange='sw_chage2'>按钮开关</switch>
+    </view>
+    <view class='section btn_slide'>
+      <text>滑动</text>
+      <slider name="slider" bindchange='OnslideChage' bindchanging='Onslidechaging' min='0' max='600' step='100' value='100' show-value></slider>
+    </view>
+    <view>
+      <radio-group name="radio" class="section" bindchange="OnRadio">
+        <label class='radio'>
+          <radio value='美国'>美国</radio>
+        </label>
+        <label class='radio'>
+          <radio value='德国' checked='{{true}}'>德国</radio>
+        </label>
+        <label class='radio'>
+          <radio value='日本'>日本</radio>
+        </label>
+        <label class='radio'>
+          <radio value='印度'>印度</radio>
+        </label>
+      </radio-group>
+    </view>
+    <view class='section check_group'>
+      <checkbox-group name="checkbox" bindchange="checkChage">
+        <label>
+          <checkbox value='篮球'>篮球</checkbox>
+        </label>
+        <label>
+          <checkbox value='足球'>足球</checkbox>
+        </label>
+        <label>
+          <checkbox value='排球'>排球</checkbox>
+        </label>
+      </checkbox-group>
+    </view>
+    <view class='section_input'>
+      <icon type='search' size='13' class='search-img' color='#405f80'></icon>
+      <input name="input" type='text' placeholder='少年包青天、公孙策' placeholder-class='placeholder'></input>
+    </view>
+    <view>
+      <button formType="submit">Submit</button>
+      <button formType="reset">Reset</button>
+    </view>
+
+
+  </form>
+
+</view>
