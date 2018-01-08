@@ -46,4 +46,6 @@ Page({
   controltap(e) {
     console.log(e.controlId)
   }
+ 
 })
+

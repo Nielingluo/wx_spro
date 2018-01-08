@@ -1,16 +1,7 @@
 var postsData = require("../../../data/posts-data.js");
 Page({
 
-  oncollectionTap: function(event) {
-   
-   var gets= wx.getStorageSync('key');
-   console.log(gets);
-  },
 
-  onShareTap:function(event){
-    // wx.removeStorageSync('key');
-    wx.clearStorage();
-  },
 
   /**
    * 页面的初始数据
@@ -24,22 +15,47 @@ Page({
    */
   onLoad: function (options) {
     var postId = options.id;
-    //console.log(postId);
+    this.data.currentPostId = postId;
+    console.log(postId);
     var postData = postsData.postList[postId];
     //console.log(postData);
     this.setData({
       postData: postData
     })
-    // wx.setStorageSync('key', "CAA地")
-    wx.setStorageSync('key', {
-      one:"nihao",
-      one2:"NO"
+    
+    // var postscollected ={
+    //   1:"true",
+    //   2:"false",
+    //   3:"true"
+    // }
+    var postsCollected = wx.getStorageSync('posts_collected')
+    if (postsCollected){
+      var postCollected = postsCollected[postId]
+      this.setData({
+        collected: postCollected
+      })
+    }else{
+      var postsCollected = {};
+      postsCollected[postId] = false;
+      wx.setStorageSync('posts_collected', postsCollected);
+
+    }
+    
+  },
+
+  onCollectionTap: function(event) {
+    var postsCollected = wx.getStorageSync('posts_collected');
+    var postCollected = postsCollected[this.data.currentPostId];
+    //console.log(this.data.currentPostId);
+    // 取反操作，收藏变未收藏  未收藏变收藏
+    postCollected != postCollected;
+    postsCollected[this.data.currentPostId] = postCollected;
+     //更新文章是否收藏得缓存值
+    wx.setStorageSync('posts_collected', postsCollected);
+    //更新数据绑定绑定变量，从而实现图片切换
+    this.setData({
+      collected: postCollected
     })
-    wx.setStorageSync('key1', {
-      two:"huncun2",
-      two2:"huncNo"
-    })
-   
 
   },
 
