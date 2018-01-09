@@ -11,10 +11,11 @@
       <image src='/images/post/bl.png'></image>
     </swiper-item>
   </swiper>
-   <block wx:for="{{posts_key}}" wx:for-item="item"> 
+   <block wx:for="{{postList}}" wx:for-item="item"> 
     <view catchtap="OnPostTap" data-postId="{{item.postId}}" data-name='name1'>
      <template is="postItem" data="{{...item}}"/>
     </view>
+   
      
    </block> 
 
