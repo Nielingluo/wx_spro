@@ -46,11 +46,11 @@ Page({
         isPlayingMusic:true
       })
     }
-    this.setmusciMonitor();
+    this.setMusciMonitor();
 
   },
 
-  setmusciMonitor: function () {
+  setMusciMonitor: function () {
     // 监听音乐状态 放在Onload中
     var that = this;
     wx.onBackgroundAudioPlay(function () {
