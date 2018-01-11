@@ -12,9 +12,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (event) {
-    var inTheaterUrl = app.globalData.doubanbase+"/v2/movie/us_box";
-    var commingSoonUrl = app.globalData.doubanbase +"/v2/movie/coming_soon";
-    var top250Url = app.globalData.doubanbase +"/v2/movie/top250";
+    var inTheaterUrl = app.globalData.doubanbase+"/v2/movie/us_box"+"?star=0&count=3";
+    var commingSoonUrl = app.globalData.doubanbase + "/v2/movie/coming_soon" + "?star=0&count=3";
+    var top250Url = app.globalData.doubanbase + "/v2/movie/top250" + "?star=0&count=3";
 
     this.getMovieListData(inTheaterUrl);
     this.getMovieListData(commingSoonUrl);
