@@ -19,7 +19,7 @@ Page({
     var comingSoonUrl = app.globalData.doubanbase + "/v2/movie/coming_soon" + "?star=0&count=3";
     var top250Url = app.globalData.doubanbase + "/v2/movie/top250" + "?star=0&count=3";
 
-    this.getMovieListData(inTheatersUrl, "inTheaters","正在上映");
+    this.getMovieListData(inTheatersUrl, "inTheaters", "正在上映");
     this.getMovieListData(comingSoonUrl, "comingSoon", "即将上映");
     this.getMovieListData(top250Url, "top250", "豆瓣电影Top250");
 
@@ -42,9 +42,9 @@ Page({
     })
   },
 
-// 星星[1,1,1,0,0]
+  // 星星[1,1,1,0,0]
 
-  processDoubanData: function (moviesDouban, settedkey,categoryTitle) {
+  processDoubanData: function (moviesDouban, settedkey, categoryTitle) {
     var movies = [];
     for (var idx in moviesDouban.subjects) {
       var subject = moviesDouban.subjects[idx];
@@ -73,7 +73,12 @@ Page({
   },
 
 
-
+  OnMoreTap: function (event) {
+    var category = event.currentTarget.dataset.category;
+    wx.navigateTo({
+      url: 'more-movie/more-movie?category=' + category
+    })
+  },
 
 
 
@@ -81,7 +86,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**
