@@ -1,4 +1,4 @@
-<import src="../movie/movie-template.wxml" />
+ <import src="../movie/movie-template.wxml" />
 <template name="movieGridTemplate">
   <view class='grid-container'>
     <block wx:for="{{movies}}" wx:for-item="movie">
@@ -7,4 +7,7 @@
       </view>
     </block>
   </view>
-</template>
+</template> 
+
+
+

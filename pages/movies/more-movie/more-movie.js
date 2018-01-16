@@ -10,7 +10,9 @@ Page({
   data: {
     movies: {},
     navigateTitle: "",
-
+    requestUrl: "",
+    totalCount: 0,
+    isEmpty: true
   },
 
   /**
@@ -32,6 +34,7 @@ Page({
         dataUrl = app.globalData.doubanbase + "/v2/movie/top250";
         break;
     }
+    this.data.requestUrl = dataUrl;
     util.http(dataUrl, this.processDoubanData)
 
   },
@@ -55,12 +58,25 @@ Page({
       }
       movies.push(temp);
     }
+    var totalMovies = {};
 
-
+    //如果要绑定新加载的数据，那么需要同旧有的数据合并在一起
+    if (!this.data.isEmpty) {
+      totalMovies = this.data.movies.concat(movies);
+    } else {
+      totalMovies = movies;
+      this.data.isEmpty = false;
+    }
     this.setData({
-      movies:movies
+      movies: totalMovies
     });
+    this.data.totalCount += 20;
+    wx.hideNavigationBarLoading();
+    wx.stopPullDownRefresh();
   },
+
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -96,14 +112,20 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    var refreshUrl = this.data.requestUrl + "?start=0&count=20";
+    this.data.movies = {};
+    this.data.isEmpty = true;
+    util.http(refreshUrl, this.processDoubanData)
+    wx.showNavigationBarLoading();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    var nextUrl = this.data.requestUrl + "?start=" + this.data.totalCount + "&count=20";
+    util.http(nextUrl, this.processDoubanData)
+    wx.showNavigationBarLoading();
   },
 
   /**

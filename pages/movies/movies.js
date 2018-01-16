@@ -8,7 +8,10 @@ Page({
   data: {
     inTheaters: {},
     comingSoon: {},
-    top250: {}
+    top250: {},
+    searchResult: {},
+    containerShow: true,
+    searchPanelShow: false,
   },
 
   /**
@@ -23,6 +26,13 @@ Page({
     this.getMovieListData(comingSoonUrl, "comingSoon", "即将上映");
     this.getMovieListData(top250Url, "top250", "豆瓣电影Top250");
 
+  },
+
+  OnMoreTap: function (event) {
+    var category = event.currentTarget.dataset.category;
+    wx.navigateTo({
+      url: 'more-movie/more-movie?category=' + category
+    })
   },
 
   getMovieListData: function (url, settedkey, categoryTitle) {
@@ -42,8 +52,29 @@ Page({
     })
   },
 
-  // 星星[1,1,1,0,0]
+  
+  oncancelImgTap: function (event) {
+    this.setData({
+      containerShow: true,
+      searchPanelShow: false,
+    })
+  },
+  
+  onBindFocus: function (event) {
+    // console.log("onBindFocus");
+    this.setData({
+      containerShow: false,
+      searchPanelShow: true
+    })
+  },
+  onBindBlur: function (event) {
+    var text = event.detail.value;
+    //console.log(text);
+    var searchUrl = app.globalData.doubanbase + "/v2/movie/search?q=" + text;
+    this.getMovieListData(searchUrl, "searchResult", "");
+  },
 
+  // 星星[1,1,1,0,0]
   processDoubanData: function (moviesDouban, settedkey, categoryTitle) {
     var movies = [];
     for (var idx in moviesDouban.subjects) {
@@ -67,17 +98,9 @@ Page({
     readyData[settedkey] = {
       categoryTitle: categoryTitle,
       movies: movies
-    };
+    }
 
     this.setData(readyData);
-  },
-
-
-  OnMoreTap: function (event) {
-    var category = event.currentTarget.dataset.category;
-    wx.navigateTo({
-      url: 'more-movie/more-movie?category=' + category
-    })
   },
 
 
@@ -86,7 +109,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
+
   },
 
   /**
