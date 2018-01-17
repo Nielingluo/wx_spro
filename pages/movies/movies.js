@@ -35,6 +35,14 @@ Page({
     })
   },
 
+  //电影详情页
+  onMovieTap: function (event) {
+    var movieId = event.currentTarget.dataset.movieid; //movieid 小写！
+    wx.navigateTo({
+      url: 'movie-detail/movie-detail?id=' + movieId,
+    })
+  },
+
   getMovieListData: function (url, settedkey, categoryTitle) {
     var that = this;
     wx.request({
@@ -52,14 +60,14 @@ Page({
     })
   },
 
-  
+
   oncancelImgTap: function (event) {
     this.setData({
       containerShow: true,
       searchPanelShow: false,
     })
   },
-  
+
   onBindFocus: function (event) {
     // console.log("onBindFocus");
     this.setData({

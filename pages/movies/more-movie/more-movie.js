@@ -75,8 +75,13 @@ Page({
     wx.stopPullDownRefresh();
   },
 
-
-
+ //跳转电影详情页
+  onMovieTap: function (event) {
+    var movieId = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: '../movie-detail/movie-detail?id=' + movieId
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -115,6 +120,7 @@ Page({
     var refreshUrl = this.data.requestUrl + "?start=0&count=20";
     this.data.movies = {};
     this.data.isEmpty = true;
+    this.data.totalCount=0,
     util.http(refreshUrl, this.processDoubanData)
     wx.showNavigationBarLoading();
   },
