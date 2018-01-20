@@ -1,13 +1,24 @@
 <!--index.wxml-->
+<view class="{{flag ? 'change' : 'change_after'}}">改变字体颜色</view>
+
 <view class="container">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-s='{{false}}'  > 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
+
+
+
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <text class="user-motto">{{toggle_con}}</text>
+    <text wx:if="{{toggle_status}}" catchtap='onClickTap' style='color:#ff0000'>{{toggle_font}}</text>
   </view>
+
+
+   <text wx:if="{{i}}" class="user-motto">一个实际开发项目可以通过哪些解决方案实现，各有什么特点又该怎样权衡利弊？如何制定规.....</text>
+   <text wx:else class="user-motto">一个实际开发项目可以通过哪些解决方案实现，各有什么特点又该怎样权衡利弊？如何制定规范，才能让团队成员在协作中浑然一体？本课程带你掌握设计页面整体架构的核心要义</text>
+   <text wx:if="{{toggle_status}}" catchtap='onClickTap_i' style='color:#ff0000'>{{toggle_font}}</text>
 </view>

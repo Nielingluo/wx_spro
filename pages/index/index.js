@@ -4,11 +4,66 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    toggle_con: "一个实际开发项目可以通过哪些解决方案实现，各有什.....",
+    toggle_font:"[点击展开]",
+    toggle_status:true,
+    i:true,
+    flag:false,
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+
+  // 内容展开与收起——方式一：
+  onClickTap:function(event){
+    if (this.data.toggle_status){
+       this.setData({
+         toggle_con: "一个实际开发项目可以通过哪些解决方案实现，各有什么特点又该怎样权衡利弊？如何制定规范，才能让团队成员在协作中浑然一体？本课程带你掌握设计页面整体架构的核心要义。",
+         toggle_font:"[点击收起]"
+       })
+       this.data.toggle_status = false;
+    }else{
+      this.setData({
+        toggle_con: "一个实际开发项目可以通过哪些解决方案实现，各有什么特点又该怎样权衡利弊？如何制定规.....",
+        toggle_font: "[点击展开]"
+      })
+       this.data.toggle_status = true;
+    }
+
+  //  wx.showToast({
+  //    title: this.data.toggle_status ? "收起成功" : "展开成功",
+  //    duration:1000
+  //  })
+
+  // wx.showModal({
+  //   title: '内容展开与收缩',
+  //   content: 'KKK',
+  // })
+      
+  },
+
+// 内容展开与收起——方式二：
+  onClickTap_i:function(event){
+    if(this.data.i){
+      this.setData({
+          i:false,
+          toggle_font: "[点击收起]"
+      })
+      console.log(this.data.i );
+    }else{
+      this.setData({
+        i: true,
+        toggle_font: "[点击展开]"
+      })
+      console.log(this.data.i);
+    }
+  },
+
+
+
+
+
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
