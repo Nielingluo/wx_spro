@@ -17,7 +17,7 @@ Page({
   onLoad: function (options) {
     var postId = options.id;
     this.data.currentPostId = postId;
-    //console.log(postId);
+   // console.log(postId);
     var postData = postsData.postList[postId]
     this.setData({
       postData: postData

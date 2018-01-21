@@ -41,8 +41,10 @@
       <icon type='search' size='13' class='search-img' color='#405f80'></icon>
       <input name="input" type='text' placeholder='少年包青天、公孙策' placeholder-class='placeholder'></input>
     </view>
+    <input type='text' name="pro" placeholder='请输入您的项目'></input>
+    <text style='font-size:26rpx; color:#ff0000'>{{counts}}</text>
     <view>
-      <button formType="submit">Submit</button>
+      <button formType="submit" disabled='{{disabled}}'>Submit</button>
       <button formType="reset">Reset</button>
     </view>
 
