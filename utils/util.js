@@ -47,10 +47,18 @@ function convertToCastInfos(casts) {
   return castsArray;
 }
 
+
+//表单提交数字减一
+// function self_reduction(){
+//   console.log("表单提交数字减一");
+// }
+
+
 module.exports = {
   convertToStarsArray: convertToStarsArray,
   http:http,
   convertToCastString: convertToCastString,
-  convertToCastInfos: convertToCastInfos
+  convertToCastInfos: convertToCastInfos,
+  // self_reduction: self_reduction
 }
 

@@ -34,8 +34,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    disabled: false,
-    counts: 9
+    disabled: false
   },
 
 
@@ -44,35 +43,47 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var counts = 9;
-    wx.setStorageSync('key', counts)
+    var counts = wx.getStorageSync('key')
+    this.data.currentcounts = counts
+    if (counts) {
+      this.setData({
+        counts: counts
+      })
+    } else {
+      wx.setStorageSync('key', 9)
+    }
+    // console.log(counts);
   },
 
 
-  formSubmit: function (event) {
-    console.log("提交表单:", event.detail.value)
-
-    var counts = 9;
+  //自定义自减方法
+  self_redution: function (event) {
     var a = wx.getStorageSync('key')
     if (a > 0) {
       var b = a - 1
     } else {
-      var b = counts
+      var b = this.data.currentcounts
     }
     console.log(b);
     a = wx.setStorageSync('key', b)
     this.setData({
-      counts: b,
-      //disabled: !this.data.disabled
+      counts: b
     })
-
-
-
-
-    // this.setData({
-    //   disabled: !this.data.disabled
-    // })
   },
+
+
+    formSubmit: function (event) {
+      console.log("提交表单:", event.detail.value)
+      this.self_redution() //调用上面自减方法
+      // this.setData({
+      //   disabled: !this.data.disabled
+      // })
+    },
+
+
+  // removcache: function () {
+  //   wx.clearStorageSync();
+  // },
 
 
 
