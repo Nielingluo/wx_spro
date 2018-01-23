@@ -37,15 +37,22 @@ Page({
     console.log(e.type)
   },
   markertap(e) {
-   // console.log(e.markerId)
-   wx.openLocation({
-     longitude: 113.324520,
-     latitude: 23.21229
-   });
+    // console.log(e.markerId)
+    wx.openLocation({
+      longitude: 113.324520,
+      latitude: 23.21229
+    });
   },
   controltap(e) {
     console.log(e.controlId)
-  }
- 
+  },
+
+  onClickTap: function () {
+    wx.navigateTo({
+      url: '/pages/form/form',
+    })
+  },
+
+
 })
 

@@ -43,6 +43,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("Onload");
+    wx.setNavigationBarTitle({
+      title: '表单也买那',
+    })
+
+
+
     var counts = wx.getStorageSync('key')
     this.data.currentcounts = counts
     if (counts) {
@@ -91,14 +98,19 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    console.log("onReady");
+  
+  
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log("onShow");
+    wx.setNavigationBarTitle({
+      title: '当前页面'
+    })
   },
 
   /**

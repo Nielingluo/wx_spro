@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/map/map",
     "pages/form/form",
     "pages/welcome/welcome",
     "pages/movies/movies",
@@ -8,7 +9,7 @@
     "pages/posts/post",
     "pages/posts/post-detail/post-detail",
     "pages/index/index",
-    "pages/map/map",
+   
    
     
     "pages/logs/logs"
