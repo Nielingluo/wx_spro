@@ -1,0 +1,13 @@
+<view class="news_detail">
+  <image src='{{newsdetail.newsImage}}' class='meta_img' mode='aspectFill'></image>
+  <view class='news_content'>
+    <text class="question-title">{{newsdetail.title}}</text>
+    <view class='meta'>
+      <image class="avatar" src="http://pic4.zhimg.com/v2-37991384e58abd2176d479d31406e363_is.jpg"></image>
+      <text class="author">游戏运营/渠道/投放</text>
+    </view>
+    <view class='content'>
+      {{newsdetail.newsbody}}
+    </view>
+  </view>
+</view>

@@ -1,0 +1,37 @@
+.news_detail{
+  display: flex;
+  flex-direction: column;
+}
+.meta_img{
+  width: 100%;
+  height: 361rpx;
+}
+.news_content{
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 26rpx;
+}
+.question-title{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #000;
+}
+.meta{
+  float: left;
+  padding: 36rpx 0;
+}
+.avatar{
+  width: 42rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+.author{
+  font-size: 22rpx;
+  color: #333;
+  vertical-align: middle;
+}
+.content{
+  font-size: 24rpx;
+  color: #666;
+}

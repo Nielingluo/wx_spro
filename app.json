@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/map/map",
-    "pages/form/form",
+    "pages/dailynews/dailynews/dailynews",
+    "pages/dailynews/dailynews-detail/dailynews-detail",
     "pages/welcome/welcome",
     "pages/movies/movies",
     "pages/movies/movie-detail/movie-detail",
@@ -9,9 +9,8 @@
     "pages/posts/post",
     "pages/posts/post-detail/post-detail",
     "pages/index/index",
-   
-   
-    
+    "pages/map/map",
+    "pages/form/form",
     "pages/logs/logs"
   ],
   "window": {
@@ -21,7 +20,7 @@
     "navigationBarTextStyle": "#fff"
   },
   "tabBar": {
-    "borderStyle":"white",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/posts/post",
@@ -34,6 +33,12 @@
         "text": "电影",
         "iconPath": "/images/tab/dianying.png",
         "selectedIconPath": "/images/tab/dianying_hl.png"
+      },
+      {
+        "pagePath": "pages/dailynews/dailynews/dailynews",
+        "text": "日报",
+        "iconPath": "/images/tab/ciwei.png",
+        "selectedIconPath": "/images/tab/ciwei_hl.png"
       }
     ]
   }
