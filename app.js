@@ -37,7 +37,8 @@ App({
     // userInfo: null
     g_isPlayingMusic : false,
     g_currentMusicPostId :null,
-    doubanbase:"https://api.douban.com",
+    // doubanbase:"https://api.douban.com",
+    doubanbase: "http://t.yushu.im",
     rbzhihu: 'https://news-at.zhihu.com'
   }
 })

@@ -1,3 +1,4 @@
+var util = require("../../../utils/util.js");
 var app = getApp();
 Page({
 
@@ -16,23 +17,24 @@ Page({
   onLoad: function (options) {
     var Latest = app.globalData.rbzhihu + "/api/4/news/latest";
     //var Messcon = app.globalData.rbzhihu +"/api/4/news/3892357";
-    this.getNewlistData(Latest);
+    //this.getNewlistData(Latest);  //发起http请求
     // this.getNewlistData(Messcon);
+    util.http(Latest, this.processNewsData)
   },
 
-  getNewlistData: function (url) {
-    var that = this
-    wx.request({
-      url: url,
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        
-        that.processNewsData(res.data)
-      }
-    })
-  },
+
+  // getNewlistData: function (url) {
+  //   var that = this
+  //   wx.request({
+  //     url: url,
+  //     header: {
+  //       'content-type': 'application/json'
+  //     },
+  //     success: function (res) {
+  //       that.processNewsData(res.data) //处理得到的数据
+  //     }
+  //   })
+  // }, 
 
   processNewsData: function (newslist) {
     //console.log(newslist);

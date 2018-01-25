@@ -1,4 +1,4 @@
-// pages/dailynews-detail/dailynews-detail.js
+var util = require("../../../utils/util.js");
 var app=getApp();
 Page({
 
@@ -15,29 +15,18 @@ Page({
   onLoad: function (options) {
     var newsId = options.id
     var url = app.globalData.rbzhihu + "/api/4/news/" + newsId
-    this.getNewlistData(url)
+    util.http(url, this.processNewsData);
   },
 
-  getNewlistData: function (url) {
-    var that = this
-    wx.request({
-      url: url,
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        that.processNewsData(res.data)
-      }
-    })
-  },
+
   processNewsData:function(newsdetail){
-     console.log(newsdetail);
+     //console.log(newsdetail);
     var newsdetail={
       title: newsdetail.title,
       newsImage: newsdetail.image,
       newsbody:newsdetail.body
     }
-    console.log(newsdetail.newsbody);
+    //console.log(newsdetail.newsbody);
     this.setData({
       newsdetail: newsdetail
     })
