@@ -18,9 +18,18 @@ Page({
     // https://api.douban.com/v2/movie/subject/1295644 请求数据
     var url = app.globalData.doubanbase + "/v2/movie/subject/" + movieId;
     var movie = new Movie(url);
-    var that = this;
-    movie.getMovieData(function (movie){
-      that.setData({
+
+
+    // var that = this;
+    // movie.getMovieData(function (movie){
+    //   that.setData({
+    //     movie: movie
+    //   })
+    // })
+
+   // ES6箭头函数改写
+    movie.getMovieData( (movie) =>{
+      this.setData({  //this指代的就是上面的page   this指代的环境就是你当前定义箭头函数的环境，而不是调用方的环境。
         movie: movie
       })
     })

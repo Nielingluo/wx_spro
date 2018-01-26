@@ -16,3 +16,5 @@
     </view>
   </block>
 </view>
+
+<text catchtap='onOpenHtml'>点击打开网页</text>
