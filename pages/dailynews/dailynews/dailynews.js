@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
- 
+
   },
 
   /**
@@ -46,33 +46,32 @@ Page({
         title = title.substring(0, 20) + "...."
       }
       //console.log(title);
-      var temp={
-        title:title,
-        newsId :stories.id,
-        newsimages:stories.images
+      var temp = {
+        title: title,
+        newsId: stories.id,
+        newsimages: stories.images
       }
       news.push(temp);
       this.setData({
-        news:news
+        news: news
       })
     }
   },
 
-  onClickTap:function(event){
+  onClickTap: function (event) {
     var newsId = event.currentTarget.dataset.newsid
-   // console.log(newsId);
+    // console.log(newsId);
     wx.navigateTo({
       url: '../dailynews-detail/dailynews-detail?id=' + newsId
     })
   },
 
-  onOpenHtml: function (event){
+  onOpenHtml: function (event) {
     wx.navigateTo({
       url: '../video/video'
     })
   },
-
-
+ 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -35,3 +35,50 @@
   font-size: 24rpx;
   color: #666;
 }
+.tabs-box{
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.tabs-item{
+  width: 33.3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C7C7CB;
+  font-size: 28rpx;
+  border-bottom: 1px solid #666;
+}
+.tabs-item.selected{
+  color: salmon;
+  border-bottom: 2px solid salmon;
+}
+
+
+
+
+
+
+
+
+
+/* 
+.tabs-box{
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15rpx;
+}
+.tabs-item{
+  width: 33.3%;
+  color: #C7C7CB;
+  font-size: 28rpx;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-bottom: 1rpx solid #D0D0D7;
+}
+.tabs-item.selected{
+  color: rgba(171,149,109,.8);
+  border-bottom: 2px solid rgba(171,149,109,.8);
+} */

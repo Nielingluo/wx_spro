@@ -6,8 +6,16 @@
       <image class="avatar" src="http://pic4.zhimg.com/v2-37991384e58abd2176d479d31406e363_is.jpg"></image>
       <text class="author">游戏运营/渠道/投放</text>
     </view>
+
+    <view class='tabs-box'>
+      <block wx:for="{{['产品','影响','售后']}}">
+        <view class="tabs-item {{currentTabsIndex==index?'selected':''}}" bindtap="onTabsItemTap" data-index='{{index}}'>{{item}}</view>
+      </block>
+    </view>
+
+
     <view class='content'>
-      {{newsdetail.newsbody}}
+       {{newsdetail.newsbody}} 
     </view>
   </view>
 </view>

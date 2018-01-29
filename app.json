@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/dailynews/video/video",
     "pages/dailynews/dailynews/dailynews",
     "pages/dailynews/dailynews-detail/dailynews-detail",
-    "pages/welcome/welcome",
+    
     "pages/movies/movies",
     "pages/movies/movie-detail/movie-detail",
     "pages/movies/more-movie/more-movie",

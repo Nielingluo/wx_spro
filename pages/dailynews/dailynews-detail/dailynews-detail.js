@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    newsdetail:[]
+    newsdetail:[],
+    currentTabsIndex:0
   },
 
   /**
@@ -31,6 +32,19 @@ Page({
       newsdetail: newsdetail
     })
   },
+
+  //tabs 切换
+  onTabsItemTap:function(event){
+    var index = event.currentTarget.dataset.index;
+    //console.log(index)
+    this.setData({
+      currentTabsIndex :index
+    })
+
+  },
+
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
