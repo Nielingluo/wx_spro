@@ -37,8 +37,9 @@ Page({
   // }, 
 
   processNewsData: function (newslist) {
-    //console.log(newslist);
+    console.log(newslist);
     var news = [];
+    var banners = [];
     for (var idx in newslist.stories) {
       var stories = newslist.stories[idx];
       var title = stories.title;
@@ -56,6 +57,29 @@ Page({
         news: news
       })
     }
+    // banner图
+    for (let img in newslist.top_stories){
+      var top_stories = newslist.top_stories[img];
+      var teb = {
+        bid: top_stories.id,
+        btitle: top_stories.title,
+        bimg: top_stories.image
+      }
+      banners.push(teb);
+      //console.log(banners);
+      this.setData({
+        banners: banners
+      })
+    }
+  },
+
+  onSwiperTap:function(event){
+    console.log(event);
+    var bannerId = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../dailynews-detail/dailynews-detail?id=' + bannerId
+    })
+
   },
 
   onClickTap: function (event) {

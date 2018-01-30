@@ -21,7 +21,7 @@ Page({
 
 
   processNewsData: function (newsdetail) {
-    //console.log(newsdetail);
+    console.log(newsdetail);
     var newsdetail = {
       title: newsdetail.title,
       newsImage: newsdetail.image,

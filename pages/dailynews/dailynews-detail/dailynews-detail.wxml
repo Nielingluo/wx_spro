@@ -7,20 +7,21 @@
       <text class="author">游戏运营/渠道/投放</text>
     </view>
 
+
     <view class='tabs-box'>
       <block wx:for="{{['产品','影响','售后']}}">
         <view class="tabs-item {{currentTabsIndex==index?'selected':''}}" bindtap="onTabsItemTap" data-index='{{index}}'>{{item}}</view>
       </block>
     </view>
+
     <view class='tabs-detail'>
       <view hidden='{{currentTabsIndex!=0}}' class='tabs-1'>aaaa</view> 
       <view hidden='{{currentTabsIndex!=1}}' class='tabs-2'>bbbb</view>
       <view hidden='{{currentTabsIndex!=2}}' class='tabs-3'>cccc</view>
     </view>
-
-
+    
     <view class='content'>
-      {{newsdetail.newsbody}}
+       {{newsdetail.newsbody}} 
     </view>
   </view>
 </view>
