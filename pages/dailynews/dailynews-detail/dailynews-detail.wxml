@@ -1,3 +1,4 @@
+<import src="/wxParse/wxParse.wxml"/>
 <view class="news_detail">
   <image src='{{newsdetail.newsImage}}' class='meta_img' mode='aspectFill'></image>
   <view class='news_content'>
@@ -21,7 +22,8 @@
     </view>
     
     <view class='content'>
-       {{newsdetail.newsbody}} 
+       <!-- {{newsdetail.newsbody}}  -->
+      <template is="wxParse" data="{{wxParseData:newsbody.nodes}}"/>
     </view>
   </view>
 </view>

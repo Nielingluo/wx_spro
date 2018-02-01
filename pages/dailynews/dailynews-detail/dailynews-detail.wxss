@@ -1,3 +1,4 @@
+@import "/wxParse/wxParse.wxss";
 .news_detail{
   display: flex;
   flex-direction: column;
@@ -54,7 +55,9 @@
   border-bottom: 2px solid salmon;
 }
 
-
+.meta{
+  display: none;
+}
 
 
 

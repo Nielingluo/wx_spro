@@ -74,7 +74,7 @@ Page({
   },
 
   onSwiperTap:function(event){
-    console.log(event);
+    //console.log(event);
     var bannerId = event.currentTarget.dataset.id;
     wx.navigateTo({
       url: '../dailynews-detail/dailynews-detail?id=' + bannerId
@@ -95,7 +95,7 @@ Page({
       url: '../video/video'
     })
   },
- 
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

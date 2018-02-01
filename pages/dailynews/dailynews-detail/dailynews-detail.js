@@ -1,4 +1,5 @@
 var util = require("../../../utils/util.js");
+var WxParse = require('../../../wxParse/wxParse.js');
 var app = getApp();
 Page({
 
@@ -21,16 +22,22 @@ Page({
 
 
   processNewsData: function (newsdetail) {
-    console.log(newsdetail);
+    //console.log(newsdetail);
     var newsdetail = {
       title: newsdetail.title,
       newsImage: newsdetail.image,
       newsbody: newsdetail.body
     }
-    //console.log(newsdetail.newsbody);
+
     this.setData({
       newsdetail: newsdetail
     })
+    
+    //处理html数据---wxParse----微信小程序富文本解析
+    var newsbody = this.data.newsdetail.newsbody;
+    var that = this;
+    WxParse.wxParse('newsbody', 'html', newsbody, that, 0);
+
   },
 
   //tabs 切换

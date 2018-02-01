@@ -1,8 +1,8 @@
 <!-- <web-view src="https://wx.bjyestar.com/index.html"></web-view> -->
 <button type='primary' bindtap='onChooseAddress'>获取用户地址</button>
 <button type='default' bindtap='onGetuserInfo'>获取用户信息</button>
-<button type='warn'  bindtap='oncheckSession'>检查登录态</button>
-<button type='primary'  bindtap='onOpenSetting'>用户信息设置</button>
+<button type='warn' bindtap='oncheckSession'>检查登录态</button>
+<button type='primary' bindtap='onOpenSetting'>用户信息设置</button>
 <button type='default' bindtap='onStarRecord'>开始录音</button>
-<button type='warn'  bindtap='onShowShare'>开启分享</button>
-<button type='primary'  bindtap='onhideShare'>取消分享</button>
+<button type='warn' bindtap='onShowShare'>开启分享</button>
+<button type='primary' bindtap='onhideShare'>取消分享</button>
