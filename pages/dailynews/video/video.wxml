@@ -6,3 +6,4 @@
 <button type='default' bindtap='onStarRecord'>开始录音</button>
 <button type='warn' bindtap='onShowShare'>开启分享</button>
 <button type='primary' bindtap='onhideShare'>取消分享</button>
+<button type='default' bindtap='onUserLogin'>用户登录</button>

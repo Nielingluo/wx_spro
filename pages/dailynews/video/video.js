@@ -107,7 +107,24 @@ Page({
     })
   },
 
-
+// 用户登录
+  onUserLogin:function(){
+    wx.login({
+      success:function(res){
+        // console.log(res);
+        if(res.code){
+          wx.request({
+            url: 'https://test.com/onLogin',
+            data:{
+              code:res.code
+            }
+          })
+        }else{
+          console.log("failuer"+res.errMsg);
+        }
+      }
+    })
+  },
 
 
 
