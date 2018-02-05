@@ -15,6 +15,69 @@ Page({
 
   },
 
+  //添加用户地址
+  editAddress: function (event) {
+    var that = this;
+    wx.chooseAddress({
+      success: function (res) {
+        console.log(res);
+        var addressInfo = {
+          name: res.userName,
+          mobile: res.telNumber,
+          totalDetail: that.setAddressInfo(res) //拼合地址
+        };
+        that._bindAddress(addressInfo); //绑定数据
+      }
+    })
+  },
+
+  _bindAddress: function (addressInfo) {
+    this.setData({
+      addressInfo: addressInfo
+    })
+  },
+
+  setAddressInfo: function (res) {
+    var province = res.provinceName,
+      city = res.cityName,
+      county = res.countyName,
+      detailInfo = res.detailInfo;
+    var totalDetail = city + county + detailInfo;
+    //判断直辖市
+    if (!this.isCenterCity(province)) {
+      var totalDetail = province + totalDetail;
+    }
+    return totalDetail;
+  },
+
+  // 是否为直辖市
+  isCenterCity: function (name) {
+    var centerCity = ["北京市", "天津市", "上海市", "重庆市"],
+      flag = centerCity.indexOf(name) >= 0;
+    return flag;
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -96,31 +159,31 @@ Page({
   },
 
   //分享
-  onShowShare:function(){
+  onShowShare: function () {
     wx.showShareMenu({
-      
+
     })
   },
-  onhideShare:function(){
+  onhideShare: function () {
     wx.hideShareMenu({
-      
+
     })
   },
 
-// 用户登录
-  onUserLogin:function(){
+  // 用户登录
+  onUserLogin: function () {
     wx.login({
-      success:function(res){
+      success: function (res) {
         // console.log(res);
-        if(res.code){
+        if (res.code) {
           wx.request({
             url: 'https://test.com/onLogin',
-            data:{
-              code:res.code
+            data: {
+              code: res.code
             }
           })
-        }else{
-          console.log("failuer"+res.errMsg);
+        } else {
+          console.log("failuer" + res.errMsg);
         }
       }
     })

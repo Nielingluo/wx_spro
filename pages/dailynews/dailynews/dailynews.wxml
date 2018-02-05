@@ -3,6 +3,7 @@
    <block wx:for="{{banners}}" wx:for-item="banners">
     <swiper-item data-id='{{banners.bid}}' catchtap='onSwiperTap'>
       <image src='{{banners.bimg}}' mode='aspectFill'></image>
+      <text class='banner-title'>{{banners.btitle}}</text>
     </swiper-item>
     </block>
   </swiper>

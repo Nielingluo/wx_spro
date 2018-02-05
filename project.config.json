@@ -32,6 +32,12 @@
 					"name": "知乎日报详情页面",
 					"pathName": "pages/dailynews/dailynews-detail/dailynews-detail",
 					"query": "id=9668308"
+				},
+				{
+					"id": -1,
+					"name": "获取用户信息-测试页面",
+					"pathName": "pages/dailynews/video/video",
+					"query": ""
 				}
 			]
 		}

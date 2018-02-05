@@ -7,3 +7,56 @@
 <button type='warn' bindtap='onShowShare'>开启分享</button>
 <button type='primary' bindtap='onhideShare'>取消分享</button>
 <button type='default' bindtap='onUserLogin'>用户登录</button>
+
+
+<!-- <view class='order-address-info'>
+  <block wx:if="{{addressInfo}}">
+    <view class='contact-box'>
+      <view>
+        <view class='user-name'>
+          <text></text>
+        </view>
+        <view class='user-tel'>
+          <text></text>
+        </view>
+        <view class='user-detail'>
+          <text></text>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='add-new-address'>
+      <text class='icon'>+</text>
+      <text>添加地址</text>
+    </view>
+  </block>
+</view> -->
+
+
+<view class="order-address-info {{orderStatus!=0?'disabled':''}}" bindtap="editAddress">
+  <block wx:if="{{addressInfo}}">
+    <view class="contact-box">
+      <view>
+        <view class="contact">
+          <view>
+            <text class="val">{{addressInfo.name}}</text>
+          </view>
+          <view class="mobile-box">
+            <text class="val">{{addressInfo.mobile}}</text>
+          </view>
+        </view>
+        <view class="detail">{{addressInfo.totalDetail}}</view>
+      </view>
+      <view class="contact-icon" wx:if="{{orderStatus==0}}">
+        <image src="../../imgs/icon/arrow@right.png"></image>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="add-new-address">
+      <text class="icon">+</text>
+      <text>添加地址</text>
+    </view>
+  </block>
+</view>
