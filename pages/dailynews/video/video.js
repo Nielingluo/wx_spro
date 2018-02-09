@@ -1,4 +1,4 @@
-// pages/dailynews/video/video.js
+
 Page({
 
   /**

@@ -9,29 +9,7 @@
 <button type='default' bindtap='onUserLogin'>用户登录</button>
 
 
-<!-- <view class='order-address-info'>
-  <block wx:if="{{addressInfo}}">
-    <view class='contact-box'>
-      <view>
-        <view class='user-name'>
-          <text></text>
-        </view>
-        <view class='user-tel'>
-          <text></text>
-        </view>
-        <view class='user-detail'>
-          <text></text>
-        </view>
-      </view>
-    </view>
-  </block>
-  <block wx:else>
-    <view class='add-new-address'>
-      <text class='icon'>+</text>
-      <text>添加地址</text>
-    </view>
-  </block>
-</view> -->
+
 
 
 <view class="order-address-info {{orderStatus!=0?'disabled':''}}" bindtap="editAddress">
@@ -60,3 +38,6 @@
     </view>
   </block>
 </view>
+
+
+
