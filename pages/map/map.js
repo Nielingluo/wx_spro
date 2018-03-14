@@ -4,34 +4,12 @@ Page({
     markers: [{
       iconPath: "/images/others.png",
       id: 0,
-      latitude: 23.099994,
-      longitude: 113.324520,
-      width: 50,
-      height: 50
+      latitude: 30.568118,
+      longitude: 114.314137, 
+      width: 30,
+      height: 30
     }],
-    polyline: [{
-      points: [{
-        longitude: 113.3245211,
-        latitude: 23.10229
-      }, {
-        longitude: 113.324520,
-        latitude: 23.21229
-      }],
-      color: "#FF0000DD",
-      width: 12,
-      dottedLine: true
-    }],
-    controls: [{
-      id: 1,
-      iconPath: '/images/location.png',
-      position: {
-        left: 0,
-        top: 300 - 50,
-        width: 50,
-        height: 50
-      },
-      clickable: true
-    }]
+    
   },
   regionchange(e) {
     console.log(e.type)
@@ -53,6 +31,54 @@ Page({
     })
   },
 
+  listenerBtnGetLocation: function() {
+    wx.getLocation({
+      //定位类型 wgs84, gcj02
+      type: 'gcj02',
+      success: function(res) {
+        console.log(res)
+        wx.openLocation({
+          //当前经纬度
+          latitude: res.latitude,
+          longitude: res.longitude,
+          //缩放级别默认28
+          scale: 28,
+          //位置名
+          name: '测试地址',
+          //详细地址
+          address: '火星路24号',
+          //成功打印信息
+          success: function(res) {
+            console.log(res)
+          },
+          //失败打印信息
+          fail: function(err) {
+            console.log(err)
+          },
+          //完成打印信息
+          complete: function(info){
+            console.log(info)
+          },
+        })
+
+      },
+      fail: function(err) {
+        console.log(err)
+      },
+      complete: function(info) {
+        console.log(info)
+      },
+    })
+  },
+
+  jumpMap: function (event) {
+    wx.openLocation({
+      latitude: 30.568118,
+      longitude: 114.314137,
+      name: '武汉艺星',
+      address: '武汉市武昌区临江大道55号锦江国际城3栋',
+    })
+  },
 
 })
 

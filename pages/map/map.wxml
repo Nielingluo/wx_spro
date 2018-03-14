@@ -1,3 +1,5 @@
-<map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
+<!-- <map id="map" longitude="114.314137" latitude="30.568118" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 100vh;"></map> -->
 
-<view style='padding：10rpx;background:#ff0000;color:#fff' catchtap='onClickTap'>点我跳转到表单页面</view>
+<!-- <view style='padding：10rpx;background:#ff0000;color:#fff' catchtap='onClickTap'>点我跳转到表单页面</view> -->
+<view bindtap='listenerBtnGetLocation'>地址</view>
+<view bindtap='jumpMap'>目标地址</view>

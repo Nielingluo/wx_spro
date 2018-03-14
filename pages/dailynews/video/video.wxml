@@ -9,9 +9,6 @@
 <button type='default' bindtap='onUserLogin'>用户登录</button>
 
 
-
-
-
 <view class="order-address-info {{orderStatus!=0?'disabled':''}}" bindtap="editAddress">
   <block wx:if="{{addressInfo}}">
     <view class="contact-box">
