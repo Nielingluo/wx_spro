@@ -1,0 +1,4 @@
+ <view class='fiexd-cart' bindtouchmove='OnMoveCart' style="right:{{right}}px; bottom:{{bottom}}px">
+    <image src='/images/fiexd-cart.png'></image>
+    <text>1</text>
+  </view>

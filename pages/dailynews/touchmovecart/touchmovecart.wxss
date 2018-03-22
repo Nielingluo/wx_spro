@@ -1,0 +1,36 @@
+/* 购物车 */
+
+.fiexd-cart {
+  position: fixed;
+  right: 104px;
+  bottom: 80px;
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 92rpx;
+  background: #313131;
+  background: rgb(49, 49, 49, 0.8);
+  z-index: 3;
+}
+
+.fiexd-cart image {
+  display: block;
+  width: 37rpx;
+  height: 37rpx;
+  margin-left: 22rpx;
+  margin-top: 34rpx;
+}
+
+.fiexd-cart text {
+  position: absolute;
+  top: 15rpx;
+  left: 42rpx;
+  display: block;
+  width: 38rpx;
+  height: 38rpx;
+  border-radius: 100%;
+  background: #ff250e;
+  text-align: center;
+  line-height: 38rpx;
+  font-size: 25rpx;
+  color: #fff;
+}

@@ -1,0 +1,8 @@
+.image-style{ 
+ position: fixed; 
+ bottom: 240px; 
+ right: 100px; 
+ width: 60px; 
+ height: 60px; 
+ z-index: 100; 
+} 

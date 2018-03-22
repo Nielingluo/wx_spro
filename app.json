@@ -1,8 +1,11 @@
 {
   "pages": [
-   
+    
     "pages/dailynews/dailynews/dailynews",
     "pages/dailynews/dailynews-detail/dailynews-detail",
+    "pages/dailynews/picker/picker",
+    "pages/dailynews/touchmovecart/touchmovecart",
+    "pages/dailynews/touchmove/touchmove",    
     "pages/welcome/welcome",
     "pages/dailynews/video/video",
     "pages/movies/movies",
