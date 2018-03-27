@@ -1,6 +1,7 @@
 {
   "pages": [
     
+    "pages/dailynews/for/for",
     "pages/dailynews/dailynews/dailynews",
     "pages/dailynews/dailynews-detail/dailynews-detail",
     "pages/dailynews/picker/picker",
